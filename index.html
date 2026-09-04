@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOPUP-PB | Cash & Character Point Blank</title>
+  <meta name="description" content="Top up PB Cash dan jual character Point Blank. Pembayaran DANA dan QRIS, verifikasi via WhatsApp." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-wrap">
+      <a href="#home" class="logo"><span>TOPUP</span>-PB</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <nav id="navMenu">
+        <a href="#home">Beranda</a>
+        <a href="#cash">PB Cash</a>
+        <a href="#character">Character</a>
+        <a href="#cara">Cara Beli</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">POINT BLANK STORE</p>
+          <h1>TOP UP CASH &<br><span>JUAL CHARACTER PB</span></h1>
+          <p class="hero-text">Proses pemesanan mudah. Setelah pembayaran, kirim bukti transfer ke WhatsApp. Cash PB atau character akan diproses dan dikirim melalui WhatsApp.</p>
+          <div class="hero-actions">
+            <a href="#cash" class="btn btn-primary">TOP UP CASH</a>
+            <a href="#character" class="btn btn-light">LIHAT CHARACTER</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="shield">PB</div>
+          <h3>PEMBAYARAN AMAN</h3>
+          <p>DANA & QRIS</p>
+          <div class="steps-mini">
+            <span>1 Pilih</span><span>2 Bayar</span><span>3 WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice">
+      <div class="container">
+        <strong>⚡ PROSES PESANAN:</strong> Setelah melakukan pembayaran, klik tombol verifikasi dan kirim bukti transfer melalui WhatsApp. Admin akan memproses pengiriman Cash PB atau Character.
+      </div>
+    </section>
+
+    <section class="section" id="cash">
+      <div class="container">
+        <div class="section-title">
+          <p>TOP UP</p>
+          <h2>PB CASH</h2>
+          <span>Pilih nominal Cash Point Blank yang kamu inginkan.</span>
+        </div>
+        <div class="product-grid" id="cashGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="character">
+      <div class="container">
+        <div class="section-title light-title">
+          <p>READY STOCK</p>
+          <h2>JUAL CHARACTER PB</h2>
+          <span>Pilih character sesuai rank dan item yang kamu inginkan.</span>
+        </div>
+        <div class="character-grid" id="characterGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="cara">
+      <div class="container">
+        <div class="section-title">
+          <p>MUDAH & CEPAT</p>
+          <h2>CARA PEMBELIAN</h2>
+        </div>
+        <div class="how-grid">
+          <article><div class="num">01</div><h3>Pilih Produk</h3><p>Pilih nominal PB Cash atau character yang tersedia.</p></article>
+          <article><div class="num">02</div><h3>Isi Data</h3><p>Masukkan nama dan nomor WhatsApp untuk pesanan.</p></article>
+          <article><div class="num">03</div><h3>Lakukan Pembayaran</h3><p>Bayar menggunakan DANA atau scan QRIS.</p></article>
+          <article><div class="num">04</div><h3>Kirim Bukti</h3><p>Klik verifikasi dan kirim bukti pembayaran ke WhatsApp admin.</p></article>
+          <article><div class="num">05</div><h3>Pesanan Diproses</h3><p>Cash PB atau character akan dikirim melalui WhatsApp setelah pembayaran diverifikasi.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>SIAP TOP UP ATAU BELI CHARACTER?</h2>
+        <p>Pilih produk dan lakukan pemesanan sekarang.</p>
+        <a href="#cash" class="btn btn-primary">PILIH PRODUK</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div><strong>TOPUP-PB</strong><p>Top Up Cash & Jual Character Point Blank.</p></div>
+      <div><p>Verifikasi pesanan melalui WhatsApp.</p><p>© 2026 TOPUP-PB</p></div>
+    </div>
+  </footer>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-box">
+      <button class="close" id="closeModal">×</button>
+      <div id="orderStep">
+        <p class="eyebrow">CHECKOUT</p>
+        <h2 id="selectedProduct">Produk</h2>
+        <p class="price-modal" id="selectedPrice"></p>
+
+        <label>Nama Pembeli
+          <input type="text" id="buyerName" placeholder="Masukkan nama" />
+        </label>
+        <label>Nomor WhatsApp Pembeli
+          <input type="tel" id="buyerWhatsapp" placeholder="Contoh: 081234567890" />
+        </label>
+
+        <div class="payment-choice">
+          <h3>Pilih Metode Pembayaran</h3>
+          <label class="pay-option"><input type="radio" name="payment" value="DANA" checked /> <span>DANA</span></label>
+          <label class="pay-option"><input type="radio" name="payment" value="QRIS" /> <span>QRIS</span></label>
+        </div>
+
+        <button class="btn btn-primary full" id="continuePayment">LANJUT KE PEMBAYARAN</button>
+      </div>
+
+      <div id="paymentStep" class="hidden">
+        <p class="eyebrow">PEMBAYARAN</p>
+        <h2 id="paymentProduct"></h2>
+        <p class="price-modal" id="paymentPrice"></p>
+
+        <div id="danaPayment" class="payment-info">
+          <h3>Bayar melalui DANA</h3>
+          <p>Kirim pembayaran ke nomor berikut:</p>
+          <div class="number-box">
+            <strong id="danaNumber">082249246366</strong>
+            <button id="copyDana">Salin</button>
+          </div>
+          <small>Pastikan nominal pembayaran sesuai pesanan.</small>
+        </div>
+
+        <div id="qrisPayment" class="payment-info hidden">
+          <h3>Scan QRIS</h3>
+          <img src="assets/qris.png" alt="QRIS TOPUP-PB" class="qris-image" />
+          <p>Scan menggunakan aplikasi pembayaran yang mendukung QRIS.</p>
+        </div>
+
+        <div class="verify-box">
+          <strong>Sudah melakukan pembayaran?</strong>
+          <p>Klik tombol di bawah, lalu kirim bukti transfer/screenshot pembayaran ke WhatsApp admin.</p>
+          <button class="btn btn-whatsapp full" id="verifyWhatsapp">KIRIM BUKTI PEMBAYARAN</button>
+        </div>
+
+        <button class="back-btn" id="backOrder">← Kembali</button>
+      </div>
+    </div>
+  </div>
+
+  <a class="floating-wa" id="floatingWa" href="#" aria-label="WhatsApp Admin">☏</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
