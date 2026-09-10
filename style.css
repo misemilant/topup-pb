@@ -36,3 +36,15 @@ label{display:block;font-size:13px;font-weight:700;margin:14px 0}input[type=text
 .floating-wa{position:fixed;right:18px;bottom:18px;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:#159447;color:#fff;text-decoration:none;font-size:30px;box-shadow:0 4px 15px #0004}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-card{max-width:420px}.product-grid{grid-template-columns:repeat(2,1fr)}.character-grid{grid-template-columns:1fr 1fr}.how-grid{grid-template-columns:1fr 1fr}.menu-btn{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:18px;flex-direction:column;border-bottom:2px solid var(--red)}nav.show{display:flex}}
 @media(max-width:560px){.hero{padding:60px 0}.section{padding:55px 0}.product-grid,.character-grid{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr}.footer-wrap{flex-direction:column}.hero h1{font-size:40px}.section-title h2{font-size:28px}.details{min-height:auto}}
+.image-card {
+  padding: 0;
+  overflow: hidden;
+  background: #111;
+  border: 2px solid #d6a928;
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+                        }
