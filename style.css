@@ -43,10 +43,10 @@ label{display:block;font-size:13px;font-weight:700;margin:14px 0}input[type=text
   border: 2px solid #d6a928;
 }
 
-.image-card img {
-  display: block;
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  object-position: center;
+@media (max-width: 560px) {
+  .image-card img {
+    height: 210px;
+    object-fit: cover;
+    object-position: center;
+  }
 }
